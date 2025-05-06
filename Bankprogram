@@ -1,0 +1,70 @@
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class Bank implements ActionListener{
+	TextArea a,b,c;
+	Button h,i;
+	Bank() {
+
+		Frame f = new Frame();
+		Label l=new Label("amount1");
+		l.setBounds(50,10,100,30);
+	    TextArea a = new TextArea();
+		a.setBounds(10, 30, 300, 300);
+		Label ll=new Label("amount2");
+		ll.setBounds(50,10,100,30);
+		TextArea b = new TextArea();
+		b.setBounds(10, 30, 300, 300);
+		Label lll=new Label("add");
+		lll.setBounds(50,10,100,30);
+		TextArea c = new TextArea();
+		c.setBounds(10, 30, 300, 300);
+		Button h=new Button("deposit");
+		h.setBounds(100, 300,100,30);
+		Button i=new Button("Withdraw");
+		i.setBounds(100, 300,100,30);
+		f.add(l);
+		f.add(ll);
+		f.add(lll);
+		f.add(a);
+		f.add(b);
+		f.add(c);
+		f.add(i);
+		f.setSize(400, 300);
+		f.setLayout(null);
+		f.setVisible(true);
+	}
+		public void actionPerformed(ActionEvent e) {
+			String z=a.getText();
+			int f=Integer.parseInt(z);
+
+			String x=b.getText();
+			int f1=Integer.parseInt(x);
+
+			String w=c.getText();
+			int f2=Integer.parseInt(w);
+			if(e.getSource()==h)
+			{
+				System.out.println("deposit");
+				int m=f+f1;
+				System.out.println(m);
+			}
+			if(e.getSource()==i)
+			{
+				System.out.println("withdraw");
+				int g=f-f1;
+				System.out.println(g);
+			}
+			
+			
+		
+
+	}
+	public static void main(String[] args) {
+		Bank e = new Bank();
+		
+
+	}
+
+}
