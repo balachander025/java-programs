@@ -1,0 +1,44 @@
+import javax.swing.*;
+import java.awt.event.*; 
+
+public class Log{
+	JFrame f;
+	Log(){
+		f=new JFrame();
+		JButton b=new JButton("submit");
+		b.setBounds(200, 150,80,30);
+	    
+		JLabel label=new JLabel();
+		label.setBounds(100, 50, 180,30);
+		
+		DefaultListModel<String> l=new DefaultListModel();
+		l.addElement("Dhiraj");
+		l.addElement("Kavya");
+		l.addElement("Tilaga");
+		l.addElement("Navya");
+		JList<String> jl=new JList<>(l);
+		jl.setBounds(100, 100,100,100);
+	    
+		f.add(jl);
+		f.add(label);
+		f.add(b);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+		b.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String data=" ";
+				if(jl.getSelectedIndex()!=-1) {
+					data="You have selected name:"+jl.getSelectedValue();
+					label.setText(data);
+				}
+			}
+		});
+		
+	}
+		public static void main(String[] args) {
+		 Log obj=new Log();
+		
+  }
+		
+}
