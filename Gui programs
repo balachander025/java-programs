@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Login extends JFrame implements ActionListener{
+	JRadioButton r,r1;
+	JButton b;
+	Login(){
+	    	JLabel l=new JLabel("1. Find 4>5= ?");
+	    	l.setBounds(50,15,100,30);
+	    	
+	    	 r=new JRadioButton("True");
+	    	r.setBounds(75,70, 100,30);
+	    	 r1=new JRadioButton("False");
+	    	r1.setBounds(75,130,100,30);
+	    	b=new JButton("Submit");
+	    	b.setBounds(100, 160,80,30);
+	    	b.addActionListener(this);
+	    	add(b);
+	    	add(l);
+	    	add(r);
+	        add(r1);
+	        setSize(300,300);
+	        setLayout(null);
+	        setVisible(true);
+	    }
+	@Override
+		public void actionPerformed(ActionEvent e) {
+		 if(r.isSelected()) {
+			 JOptionPane.showMessageDialog(this, "Answer is wrong");
+		 }
+		 if(r1.isSelected())
+			JOptionPane.showMessageDialog(this, "Answer is correct");
+	 }			
+		
+		public static void main(String[] args) {
+		  Login obj=new Login();
+  }
+		
+}
+
