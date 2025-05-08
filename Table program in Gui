@@ -1,0 +1,28 @@
+import javax.swing.*;
+
+
+public class a{
+	 	JFrame f;
+	 	a(){
+	 		f=new JFrame();
+	 		String row[][]= {
+	 				{"1","Navya","Chennai"},
+	 				{"2","Tilaga","Tamilnadu"},
+	 				{"3","Dhiraj","Mumbai"},
+	 				{"4","Kavya","Kovai"}
+	 		};
+	 		String column[]= {"Reg no","Name","Address"};
+	 		JTable t=new JTable(row,column);
+	 		t.setBounds(20,20,300,300);
+	 		JScrollPane s=new JScrollPane(t);
+	 		f.add(s);
+	 		f.setSize(400,400);
+	 		f.setVisible(true);
+	 		
+	 	}
+		public static void main(String[] args) {
+		 a obj=new a();
+		
+  }
+		
+}
