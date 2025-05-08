@@ -1,0 +1,54 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+public class Login implements Runnable{
+	JFrame f;
+	Thread t=null;
+	int hour=0,minute=0,sec=0;
+	String z;
+	JButton b;
+	
+	Login(){
+		
+		f=new JFrame();
+		t=new Thread(this);
+		t.start();
+		
+		b=new JButton();
+		b.setBounds(100, 100, 150, 80);
+		f.add(b);
+		f.setSize(400,400);
+		f.setLayout(null);
+		f.setVisible(true);
+			}
+	    public void run() {
+	    	try {
+	    		while(true) {
+	    			Calendar c=Calendar.getInstance();
+	    			hour=c.get(Calendar.HOUR_OF_DAY);
+	    			if(hour>12) hour-=12;
+	    			
+	    			minute=c.get(Calendar.MINUTE);
+	    			
+	    			sec=c.get(Calendar.SECOND);
+	    			
+	    			SimpleDateFormat format=new SimpleDateFormat("hh:mm:ss");
+	    			Date d=c.getTime();
+	    			z=format.format(d);
+	    			printTime();
+	    			t.sleep(1000);
+	    				}
+	    	}catch(Exception e) {}
+	    	
+	    }
+	    public void printTime() {
+	    	b.setText(z);
+	    }
+		public static void main(String[] args) {
+		 Login obj=new Login();
+		
+  }
+		
+}
