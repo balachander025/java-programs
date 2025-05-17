@@ -1,0 +1,25 @@
+import java.lang.*;
+class Employement
+{
+int salary=40000;
+void display()
+{
+System.out.println("parent class");
+System.out.println(salary);
+}
+}
+class Programming extends Employement
+{
+int bonus=10000;
+void display1()
+{
+System.out.println("child class");
+System.out.println(bonus);
+}
+public static void main(String[]args)
+{
+Programming p=new Programming();
+p.display();
+p.display1();
+}
+}
