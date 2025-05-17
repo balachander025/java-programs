@@ -1,0 +1,20 @@
+import java.lang.*;
+class Employed
+{
+int salary=4000;
+}
+class Programmer extends Employed
+{
+int bonus=10000;
+}
+class Seniorprogrammer extends Employed
+{
+int bonus1=2000;
+public static void main(String[]args)
+{
+Seniorprogrammer S=new Seniorprogrammer();
+Programmer p=new Programmer();
+System.out.println(S.salary+S.bonus1);
+System.out.println(p.salary+p.bonus);
+}
+}
