@@ -1,0 +1,13 @@
+public class Login {
+	
+	public static void main(String[] args) {
+		String username="tilaga";
+     	String pass="abcde";
+     	if(username=="tilaga" && pass=="abcd") {
+     		System.out.println("Login Successfull");
+     	}
+     	else {
+     		System.out.println("Invalid Credintial");
+     	}
+	}
+}
