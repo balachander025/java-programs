@@ -1,0 +1,39 @@
+import java.lang.*;
+interface read
+{
+public void reading();
+}
+interface work
+{
+public void work();
+}
+class Labour implements read,work
+{
+String firstname,lastname;
+int age;
+public void reading()
+{
+System.out.println("reading");
+}
+public void work()
+{
+System.out.println("working");
+}
+}
+class Hourlylabour extends Labour
+{
+int salary=5000,Hoursworked;
+public int computepay()
+{
+return salary*Hoursworked;
+}
+public static void main(String[]args)
+{
+Hourlylabour lab=new Hourlylabour();
+lab.Hoursworked=12;
+lab.firstname="john";
+lab.lastname="son";
+lab.age=28;
+System.out.println(lab.computepay());
+}
+}
