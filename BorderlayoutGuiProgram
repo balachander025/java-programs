@@ -1,0 +1,27 @@
+import javax.swing.*;
+import java.awt.*;
+
+
+public class Login
+{
+	JFrame f;
+	Login(){
+		f=new JFrame();
+		
+		JButton b=new JButton("East");
+		JButton b1=new JButton("West");
+		JButton b2=new JButton("North");
+		JButton b3=new JButton("South");
+		
+		f.add(b, BorderLayout.EAST);
+		f.add(b1, BorderLayout.WEST);
+		f.add(b2, BorderLayout.NORTH);
+		f.add(b3, BorderLayout.SOUTH);
+		f.setSize(500,400);
+		f.setVisible(true);
+	}
+  public static void main(String args[]) 
+  {
+    Login obj=new Login();
+  }
+}
