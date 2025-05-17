@@ -1,0 +1,27 @@
+public class Login {
+	
+	public static void main(String[] args) {
+		int mark=65;
+		
+		if(mark==50) {
+			System.out.println("Pass mark");
+		}
+		else if(mark>=60 && mark <=69) {
+			System.out.println("D Grade");
+		}
+		else if(mark==70) {
+			System.out.println("C Grade");
+		}
+		else if(mark==80) {
+			System.out.println("B Grade");
+		}
+		else if(mark==90) {
+			System.out.println("A Grade");
+		}
+		else {
+			System.out.println("Fail mark");
+		}
+     		}
+}
+
+
