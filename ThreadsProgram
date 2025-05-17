@@ -1,0 +1,21 @@
+class Books implements Runnable {
+	public void run() {
+		for (char i = 'a'; i <= 'e'; i++) {
+			System.out.println(i);
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				System.out.println(e);
+			}
+			}
+		}
+	}
+
+	class multi2
+	{
+	public static void main(String args[]) {
+		Runnable Books  = new Books();
+		Thread a = new Thread(Books);
+		a.start();
+	}
+	}
