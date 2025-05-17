@@ -1,0 +1,18 @@
+import java.lang.*;
+import java.util.Scanner;
+interface A
+{
+void display();
+}
+class BEE implements A
+{
+public void display()
+{
+System.out.println("A display");
+}
+public static void main(String[]args)
+{
+BEE B=new BEE();
+B.display();
+}
+}
