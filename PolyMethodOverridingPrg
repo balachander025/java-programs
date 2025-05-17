@@ -1,0 +1,21 @@
+class parent
+{
+int display()
+{
+System.out.println(“heloo”);
+return 0 ;
+}
+}
+class child extends parent
+{
+int display()
+{
+System.out.println(“welcome”);
+return 0;
+}
+public static void main(String[]args)
+{
+Child c =new child();
+C.display();
+}
+}
