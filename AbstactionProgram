@@ -1,0 +1,60 @@
+import java.lang.*;
+import java.util.Scanner;
+abstract class ABS
+{
+abstract void m1();
+abstract void m2();
+abstract void m3();
+void m4()
+{
+System.out.println("m4 method");
+}
+}
+class ABS1 extends ABS
+{
+void m1()
+{
+System.out.println("m1 method");
+}
+void m2()
+{
+System.out.println("m2 method");
+}
+void m3()
+{
+System.out.println("m3 method");
+}
+public static void main(String[]args)
+{
+ABS1 A=new ABS1();
+A.m1();
+A.m2();
+A.m3();
+A.m4();
+}
+}
+Eg2:
+package nnn;
+abstract class ab {
+abstract void welcome();
+void rep() {
+System.out.println("hello rep");
+}
+}
+class student extends ab{
+void welcome() {
+System.out.println("welcome student");
+}
+}
+class Teacher extends ab{
+void welcome() {
+System.out.println("welcome Teacher");
+}
+public static void main(String []args) {
+ab b=new student();
+ab t=new Teacher();
+b.welcome();
+t.welcome();
+b.rep();
+}
+}
