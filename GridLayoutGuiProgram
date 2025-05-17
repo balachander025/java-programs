@@ -1,0 +1,33 @@
+import javax.swing.*;
+import java.awt.*;
+
+
+public class Login
+{
+	JFrame f;
+	Login(){
+		f=new JFrame();
+		
+		JButton b=new JButton("Dhiraj");
+		JButton b1=new JButton("Navya");
+		JButton b2=new JButton("Kavya");
+		JButton b3=new JButton("Tilaga");
+		JButton b4=new JButton("Anup");
+		JButton b5=new JButton("Jai");
+		
+		f.add(b);
+		f.add(b1);
+		f.add(b2);
+		f.add(b3);
+		f.add(b4);
+		f.add(b5);
+		
+		f.setLayout(new GridLayout(3,2));
+		f.setSize(500,400);
+		f.setVisible(true);
+	}
+  public static void main(String args[]) 
+  {
+    Login obj=new Login();
+  }
+}
