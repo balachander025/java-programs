@@ -1,0 +1,32 @@
+import java.lang.*;
+interface Motorbike
+{
+int speed=50;
+public void totalDistance();
+}
+interface Cycle
+{
+int Distance=150;
+public void speed();
+}
+public class Twowheeler implements Motorbike,Cycle
+{
+int totalDistance;
+int Avgspeed;
+public void totalDistance()
+{
+totalDistance=speed*Distance;
+System.out.println(totalDistance);
+}
+public void speed()
+{
+int Avgspeed=totalDistance/speed;
+System.out.println(Avgspeed);
+}
+public static void main(String[]args)
+{
+Twowheeler T=new Twowheeler();
+T.totalDistance();
+T.speed();
+}
+}
