@@ -1,0 +1,25 @@
+import java.lang.*;
+import java.util.Scanner;
+class Tested
+{
+void add()
+{
+System.out.println("ADD");
+}
+void add(int x,int y)
+{
+System.out.println(x+y);
+}
+void add(int x,int y,int z)
+{
+z=x+y+z;
+System.out.println(z);
+}
+public static void main(String[]args)
+{
+Tested T=new Tested();
+T.add();
+T.add(5,3);
+T.add(5,8,0);
+}
+}
