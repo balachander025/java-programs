@@ -1,0 +1,36 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class jdbc3 {
+	public static void insert() {
+		try {
+			String url="jdbc:mysql://localhost:3306/bala";
+			String username="root";
+			String password="root";
+			String query="insert into details values(4,'vani','bala','post')";
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection(url,username,password);
+			Statement st=con.createStatement();
+			int rows=st.executeUpdate(query);
+			System.out.println("number of rows affected"+rows);
+			con.close();
+	}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+	public static void main(String[] args){
+			jdbc3 j=new jdbc3();
+			j.insert();
+		}
+			
+
+			
+
+	
+
+}
