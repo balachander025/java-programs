@@ -1,0 +1,40 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+public class jdbc5 {
+	public static void insert() {
+		try {
+			String url="jdbc:mysql://localhost:3306/bala";
+			String username="root";
+			String password="root";
+			int Eno=100;
+			String name="Muruga";
+			int salary=300000;
+			String post="madurai";
+			String query="insert into details values(?,?,?,?);";
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection(url,username,password);
+			PreparedStatement pst=con.prepareStatement(query);
+			pst.setInt(1,Eno);
+			pst.setString(2,name);
+			pst.setInt(3, salary);
+			pst.setString(4,post);
+			int rows=pst.executeUpdate();
+			System.out.println("number of row affected"+rows);
+			con.close();
+	}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+	public static void main(String [] args)
+	{
+		jdbc5 j=new jdbc5();
+		j.insert();
+	}
+	
+
+}
