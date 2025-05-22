@@ -1,0 +1,32 @@
+public class jdbc4 {
+	public static void insert() {
+		try {
+			String url="jdbc:mysql://localhost:3306/bala";
+			String username="root";
+			String password="root";
+			int Eno=5;
+			String name="bala";
+			int salary=200000;
+			String post="mdu";
+			//String q="insert into details (Eno,name,salary,post) values(Eno,name,salary,post);";
+			String query="insert into details (Eno,name,salary,post) values("+Eno+",'"+ name +"',"+ salary+",'"+post+"');";
+			//System.out.println(query);
+			//System.out.println(q);
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection(url,username,password);
+			Statement st=con.createStatement();
+			int rows=st.executeUpdate(query);
+			System.out.println("number of rows affected"+rows);
+			con.close();
+	}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+	public static void main(String [] args)
+	{
+		jdbc4 h=new jdbc4();
+		h.insert();
+	}
+}
