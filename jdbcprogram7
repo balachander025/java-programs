@@ -1,0 +1,32 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class jdbc7 {
+	public void update() {
+		try {
+			String url="jdbc:mysql://localhost:3306/bala";
+			String username="root";
+			String password="root";
+			String query="update details set salary=40000 where Eno=5";
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection(url,username,password);
+			Statement st=con.createStatement();
+			int rows=st.executeUpdate(query);
+			System.out.println("number of rows affected"+rows);
+			con.close();
+			
+	}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+	public static void main(String [] args)
+	{
+		jdbc7 j=new jdbc7();
+		j.update();
+	}
+}
+	
+	
