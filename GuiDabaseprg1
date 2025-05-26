@@ -1,0 +1,33 @@
+import javax.swing.*;
+import java.sql.*;
+import java.awt.*;
+import javax.swing.table.DefaultTableModel;
+
+public class SwingDisplayData {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Display Data from MySQL");
+        frame.setSize(600, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        String[] columnNames = {"ID", "Name", "Age"};
+        DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+        JTable table = new JTable(model);
+        
+        try {
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bala", "root", "root");
+            String sql = "SELECT * FROM details";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                Object[] row = {rs.getInt("Eno"), rs.getString("name"), rs.getString("salary"),rs.getString("post")};
+                model.addRow(row);
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        frame.add(new JScrollPane(table), BorderLayout.CENTER);
+        frame.setVisible(true);
+    }
+}
