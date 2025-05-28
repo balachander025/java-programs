@@ -1,0 +1,59 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.sql.*;
+
+public class Guidatabaseprg4 {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Update Database");
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        JTextField Eno = new JTextField(15);
+        JTextField name = new JTextField(15);
+        JTextField salary = new JTextField(15);
+        JTextField post = new JTextField(15);
+        JButton updateButton = new JButton("Update");
+        
+        updateButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String name1=name.getText();
+                String salary1=salary.getText();
+                String post1=post.getText();
+                int Eno1 = Integer.parseInt(Eno.getText());
+                try {
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bala", "root", "root");
+                    String sql = "UPDATE details SET name = ?, salary= ?,post=? WHERE Eno = ?";
+                    PreparedStatement stmt = conn.prepareStatement(sql);
+                   
+                    stmt.setString(1, name1);
+                    stmt.setString(2,salary1);
+                    stmt.setString(3, post1);
+                    stmt.setInt(4, Eno1);
+                    stmt.executeUpdate();
+                    conn.close();
+                    JOptionPane.showMessageDialog(frame, "Data updated successfully!");
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        
+        JPanel panel = new JPanel();
+        panel.add(new JLabel("Eno"));
+        panel.add(Eno);
+        panel.add(new JLabel("Name:"));
+        panel.add(name);
+        panel.add(new JLabel("salary"));
+        panel.add(salary);
+        panel.add(new JLabel("post"));
+        panel.add(post);
+        
+        panel.add(updateButton);
+        
+        frame.add(panel);
+        frame.setVisible(true);
+    }
+}
+
+
+
