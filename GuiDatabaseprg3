@@ -1,0 +1,42 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.sql.*;
+
+public class Guidatabaseprg3 {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Delete from Database");
+        frame.setSize(300, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        JTextField Eno = new JTextField(15);
+        JButton deleteButton = new JButton("Delete");
+        
+        deleteButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int Eno1 = Integer.parseInt(Eno.getText());
+                try {
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bala", "root", "root");
+                    String sql = "DELETE FROM details WHERE Eno= ?";
+                    PreparedStatement stmt = conn.prepareStatement(sql);
+                    stmt.setInt(1,Eno1);
+                    stmt.executeUpdate(sql);
+                    conn.close();
+                    JOptionPane.showMessageDialog(frame, "Data deleted successfully!");
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        
+        JPanel panel = new JPanel();
+        panel.add(new JLabel("ID:"));
+        panel.add(Eno);
+        panel.add(deleteButton);
+        
+        frame.add(panel);
+        frame.setVisible(true);
+    }
+}
+
+
+
