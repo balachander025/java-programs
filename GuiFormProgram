@@ -1,0 +1,162 @@
+import java.awt.Color;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class demo extends JFrame {
+
+private JPanel contentPane;
+private JTextField text1;
+private JTextField text2;
+private JTextField text3;
+private JLabel dis1,dis2,dis3,dis4;
+private JTextField text4;
+private JLabel label4;
+
+
+
+public static void main(String[] args) {
+EventQueue.invokeLater(new Runnable() {
+public void run() {
+try { 
+demo frame = new demo();
+frame.setVisible(true);
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+});
+}
+
+public demo() {
+setTitle("newpg\r\n");
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setBounds(100, 100, 685, 487);
+contentPane = new JPanel();
+contentPane.setBackground(new Color(128, 128, 128));
+contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+setContentPane(contentPane);
+contentPane.setLayout(null);
+
+JLabel label1 = new JLabel("Name");
+label1.setFont(new Font("Times New Roman", Font.BOLD, 15));
+label1.setBounds(10, 61, 53, 30);
+contentPane.add(label1);
+
+JButton button1 = new JButton("OK");
+button1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+button1.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent e) {
+dis1.setText("NAME :"+" "+text1.getText());
+dis2.setText("ROLLNO :"+" "+text2.getText());
+String a=text3.getText();
+int b=Integer.parseInt(a);
+String c=null;
+if(b<=200)
+{
+c="D";
+}
+else if(b>200 &&b<300)
+{
+c="C";
+}
+else if(b>=300 &&b<400)
+{
+c="B";
+}
+else if (b>=400 &&b<500)
+{
+c="A";
+}
+dis3.setText("MARKS :"+" "+text3.getText());
+dis4.setText("GRADE :"+" "+c);
+
+}
+
+});
+button1.setBounds(20, 329, 89, 39);
+contentPane.add(button1);
+button1.setBackground(Color.GRAY);
+button1.setForeground(Color.green);
+JButton button2 = new JButton("RESET");
+button2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+button2.setBackground(Color.GRAY);
+button2.setForeground(Color.green);
+button2.addActionListener(new ActionListener() {
+public void actionPerformed(ActionEvent e) {
+text1.setText(null);
+text2.setText(null);
+text3.setText(null);
+dis1.setText(null);
+dis2.setText(null);
+dis3.setText(null);
+dis4.setText(null);
+}
+});
+button2.setBounds(178, 329, 89, 39);
+contentPane.add(button2);
+
+text1 = new JTextField();
+text1.setBounds(108, 64, 191, 26);
+contentPane.add(text1);
+text1.setColumns(50);
+
+JLabel label2 = new JLabel("Rollno");
+label2.setFont(new Font("Times New Roman", Font.BOLD, 15));
+label2.setBounds(10, 124, 66, 33);
+contentPane.add(label2);
+
+text2 = new JTextField();
+text2.setColumns(50);
+text2.setBounds(108, 128, 191, 26);
+contentPane.add(text2);
+
+JLabel label3 = new JLabel("Mark");
+label3.setFont(new Font("Times New Roman", Font.BOLD, 15));
+label3.setBounds(10, 197, 66, 33);
+contentPane.add(label3);
+
+text3 = new JTextField();
+text3.setColumns(50);
+text3.setBounds(108, 201, 191, 26);
+contentPane.add(text3);
+
+dis1 = new JLabel("");
+dis1.setFont(new Font("Times New Roman", Font.BOLD, 15));
+dis1.setBounds(416, 60, 177, 30);
+contentPane.add(dis1);
+
+dis2 = new JLabel("");
+dis2.setFont(new Font("Times New Roman", Font.BOLD, 15));
+dis2.setBounds(416, 101, 177, 30);
+contentPane.add(dis2);
+
+dis3 = new JLabel("");
+dis3.setFont(new Font("Times New Roman", Font.BOLD, 15));
+dis3.setBounds(416, 141, 177, 39);
+contentPane.add(dis3);
+
+dis4 = new JLabel("");
+dis4.setFont(new Font("Times New Roman", Font.BOLD, 15));
+dis4.setBounds(416, 191, 177, 39);
+contentPane.add(dis4);
+
+JLabel lblNewLabel = new JLabel("GRADE CALCULATION");
+lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+lblNewLabel.setBounds(10, 22, 201, 28);
+contentPane.add(lblNewLabel);
+
+JLabel lblDislayingDetails = new JLabel("DISPLAYING DETAILS");
+lblDislayingDetails.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+lblDislayingDetails.setBounds(417, 11, 207, 30);
+contentPane.add(lblDislayingDetails);
+}
+}
