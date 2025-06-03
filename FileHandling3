@@ -1,0 +1,15 @@
+import java.io.FileWriter;
+import java.io.IOException;
+public class FileHandling3 {
+  public static void main(String[] args) {
+    try {
+      FileWriter obj=new FileWriter("C:\\Users\\STAR\\Desktop\\Balachander\\bala.txt");
+      obj.write("Hello Everyone , Monday morning all");
+      obj.close();
+      System.out.println("File written correctly");
+    }
+    catch(IOException exception) {
+      System.out.println("File Error, pls check");
+    }
+  }
+}
