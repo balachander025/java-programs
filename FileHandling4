@@ -1,0 +1,13 @@
+import java.io.File;
+
+public class FileHandling4 {
+    public static void main(String[] args) {
+        File obj=new File("C:\\Users\\STAR\\Desktop\\Balachander\\bala.txt");
+        if(obj.delete()){
+            System.out.println("File deleted");
+        }
+        else {
+            System.out.println("File does not exist");
+        }
+    }
+}
