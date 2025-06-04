@@ -1,0 +1,10 @@
+import java.util.*;
+
+public class Internationalization1 { 
+	
+	  public static void main(String[] args) {
+		  Locale l=Locale.getDefault();
+		  System.out.println(l.getDisplayLanguage());
+		
+	   }
+}
