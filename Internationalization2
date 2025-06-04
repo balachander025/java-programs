@@ -1,0 +1,22 @@
+import java.util.*;
+import java.text.NumberFormat;
+public class Internationalization2 { 
+	static void currency(Locale l) {
+		int z=15000;
+		NumberFormat f=NumberFormat.getCurrencyInstance(l);
+		String c=f.format(z);
+		 System.out.println(c);	
+	}	
+	  public static void main(String[] args) {
+		
+		  currency(Locale.CHINA);
+		  currency(Locale.CANADA);
+		  currency(Locale.FRANCE);
+		  currency(Locale.GERMANY);
+		  currency(Locale.ITALY);
+		  currency(Locale.KOREAN);
+		 
+		  currency(Locale.getDefault());
+		
+	   }
+}
