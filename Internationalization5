@@ -1,0 +1,17 @@
+import java.util.*;
+import java.text.NumberFormat;
+public class Internationalization5 { 
+	static void printnumber(Locale l) {
+	 int n=15000;
+	 NumberFormat f=NumberFormat.getNumberInstance(l);	 
+	 String rezult=f.format(n);
+		 System.out.println(rezult);		
+	}	
+	  public static void main(String[] args) {
+		  printnumber(Locale.CANADA);
+		  printnumber(Locale.CHINA);
+		  printnumber(Locale.getDefault());
+		  printnumber(Locale.GERMANY);
+		  printnumber(Locale.KOREAN);		
+	   }
+}
