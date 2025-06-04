@@ -1,0 +1,17 @@
+import java.util.*;
+import java.text.DateFormat;
+public class Internationalization4 { 
+	static void printTime(Locale l) {
+	 DateFormat f=DateFormat.getTimeInstance(DateFormat.DEFAULT,l);
+	 Date z=new Date();
+	 String rezult=f.format(z);
+		 System.out.println(rezult);		
+	}	
+	  public static void main(String[] args) {
+		  printTime(Locale.CANADA);
+		  printTime(Locale.CHINA);
+		  printTime(Locale.getDefault());
+		  printTime(Locale.GERMANY);
+		  printTime(Locale.KOREAN);		
+	   }
+}
