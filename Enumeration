@@ -1,0 +1,24 @@
+public class Enumeration1 { 
+	   enum Day{SUNDAY,MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY};
+	   
+	  public static void main(String[] args) {
+		Day z=Day.FRIDAY;
+		
+		switch(z) {
+		case WEDNESDAY:
+			System.out.println("wednesday");
+			break;
+		case THURSDAY:
+			System.out.println("thursday");
+			break;
+		case FRIDAY:
+			System.out.println(z);
+			System.out.println("friday");
+			break;
+			default:
+				System.out.println("No day");
+			}
+		
+	  }
+}
+
