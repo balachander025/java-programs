@@ -1,0 +1,19 @@
+import java.util.*;
+import java.text.DateFormat;
+public class Internationalization3 { 
+	static void printDate(Locale l) {
+	 DateFormat f=DateFormat.getDateInstance(DateFormat.DEFAULT,l);
+	 Date z=new Date();
+	 System.out.println(z);
+	 String rezult=f.format(z);
+		 System.out.println(rezult);		
+	}	
+	  public static void main(String[] args) {
+		  printDate(Locale.CANADA);
+		  printDate(Locale.CHINA);
+		  printDate(Locale.getDefault());
+		  printDate(Locale.GERMANY);
+		  printDate(Locale.ITALY);
+		
+	   }
+}
